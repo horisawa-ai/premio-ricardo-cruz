@@ -1,0 +1,25 @@
+{
+  "name": "Portal do paciente · demonstração",
+  "short_name": "Meu Plano",
+  "description": "Portal do paciente, demonstração com dados fictícios · Dr. Renan Horisawa",
+  "start_url": "./app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d3023",
+  "theme_color": "#1B4332",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
