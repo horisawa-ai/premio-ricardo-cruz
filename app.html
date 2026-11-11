@@ -649,8 +649,11 @@ html.skin .hx ul.ig li::before{left:2px;top:7px;width:6px;height:6px;border-radi
 @keyframes mkout{to{opacity:0;visibility:hidden}}
 @keyframes mkin{from{opacity:0;transform:scale(.86)}}
 @media (prefers-reduced-motion:reduce){.mk-sp .mk-ic{animation:none}}
-html.skin .hc-br{font-size:9.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:rgba(255,255,255,.74);line-height:1.25;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-html.skin .hd.min .hd-c.has-br{max-height:72px}
+html.skin.mkb .hd.min~.sb-cap{height:calc(env(safe-area-inset-top) + 24px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-size:11px;font-weight:700;line-height:1;letter-spacing:.3px;color:rgba(255,255,255,.86);white-space:nowrap;overflow:hidden}
+html.skin.mkb .hd.min{top:calc(env(safe-area-inset-top) + 30px);padding-left:11px}
+html.skin.mkb[data-tp="1"] .tp-out{top:calc(env(safe-area-inset-top) + 66px)}
+html.skin .hd-c>.mk-ic{width:40px;height:40px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+@media (max-width:359px){html.skin .hd-c>.mk-ic{display:none}html.skin.mkb .hd.min{padding-left:16px}}
 html.skin .mk-ft{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px 18px 6px;text-align:left}
 html.skin .mk-ft .mk-ic{width:44px;height:44px;box-shadow:0 6px 14px rgba(13,48,35,.22)}
 html.skin .mk-ft b{display:block;font-size:14px;font-weight:800;letter-spacing:-.2px;color:#12291f;line-height:1.25}
@@ -1162,7 +1165,7 @@ var nome=MK.nome||tx('.b1'),esp=MK.esp||tx('.b2'),reg=MK.reg||tx('.b3');
 var sp=d.getElementById('mkSp');if(sp)setTimeout(function(){if(sp.parentNode)sp.parentNode.removeChild(sp);},2400);
 if(!nome)return;
 function on(k){return MK[k]==null?true:!!MK[k];}
-if(on('barra')){var m=d.querySelector('.hd-c .hc-m');if(m){var b=d.createElement('div');b.className='hc-br';b.textContent=nome;m.insertBefore(b,m.firstChild);m.parentNode.classList.add('has-br');}}
+if(on('barra')){var hc0=d.querySelector('.hd-c'),cp0=d.querySelector('.sb-cap');if(hc0){var ic=d.createElement('span');ic.className='mk-ic';hc0.insertBefore(ic,hc0.firstChild);}if(cp0){cp0.textContent=nome+(esp?' · '+esp.split('·')[0].trim():'');H.classList.add('mkb');}}
 if(on('rodape')){var rod=d.querySelector('.rod'),pad=d.querySelector('.pad'),ref=rod||pad;if(ref){var ft=d.createElement('div');ft.className='mk-ft';ft.setAttribute('data-noe3','');ft.innerHTML='<span class="mk-ic"></span><div><b></b><span></span><span></span></div>';var q=ft.lastChild.children;q[0].textContent=nome;q[1].textContent=esp;q[2].textContent=reg;ref.parentNode.insertBefore(ft,ref.nextSibling);}}
 if(MK.credito!==0){var r2=d.querySelector('.mk-ft')||d.querySelector('.rod')||d.querySelector('.pad');if(r2){var cr=d.createElement('div');cr.className='mk-cr';cr.setAttribute('data-noe3','');cr.textContent=typeof MK.credito==='string'?MK.credito:'Aplicativo desenvolvido pelo '+nome;r2.parentNode.insertBefore(cr,r2.nextSibling);}}
 })();
